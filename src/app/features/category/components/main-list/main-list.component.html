@@ -1,0 +1,10 @@
+<section class="mt-16 mx-12 pl-8">
+  <span class="text-2xl font-bold">
+    Categorias
+  </span>
+  <ul class="mt-4 space-y-4">
+    @for(category of categories(); track category.id){
+      <li class="text-xl font-semibold">{{category.name}}</li>
+    }
+  </ul>
+</section>
