@@ -14,6 +14,4 @@ const MODULES = [MatDividerModule];
   templateUrl: './main.component.html',
   styles: ``,
 })
-export class MainComponent {
-  teste = '';
-}
+export class MainComponent {}
