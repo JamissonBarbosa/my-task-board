@@ -6,11 +6,10 @@ import { categoryBackgroundColors } from '../../constants/category-colors';
 const MODULES = [MatDivider];
 
 @Component({
-  selector: 'app-color-list',
-  standalone: true,
-  imports: [...MODULES],
-  templateUrl: './color-list.component.html',
-  styleUrl: './color-list.component.scss',
+    selector: 'app-color-list',
+    imports: [...MODULES],
+    templateUrl: './color-list.component.html',
+    styleUrl: './color-list.component.scss'
 })
 export class ColorListComponent {
   private readonly categoryService = inject(CategoryService);

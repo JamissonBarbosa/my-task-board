@@ -8,10 +8,9 @@ const COMPONENTS = [CategoryComponent, TaskComponent];
 const MODULES = [MatDividerModule];
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [...COMPONENTS, ...MODULES],
-  templateUrl: './main.component.html',
-  styles: ``,
+    selector: 'app-main',
+    imports: [...COMPONENTS, ...MODULES],
+    templateUrl: './main.component.html',
+    styles: ``
 })
 export class MainComponent {}

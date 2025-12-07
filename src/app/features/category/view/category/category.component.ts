@@ -8,11 +8,10 @@ const COMPONENTS = [MainListComponent, ColorListComponent];
 const PIPES = [AsyncPipe];
 
 @Component({
-  selector: 'app-category',
-  standalone: true,
-  imports: [...COMPONENTS, ...PIPES],
-  templateUrl: './category.component.html',
-  styleUrl: './category.component.scss',
+    selector: 'app-category',
+    imports: [...COMPONENTS, ...PIPES],
+    templateUrl: './category.component.html',
+    styleUrl: './category.component.scss'
 })
 export class CategoryComponent {
   private readonly categoryService = inject(CategoryService);
