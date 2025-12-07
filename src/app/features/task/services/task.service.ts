@@ -43,7 +43,32 @@ export class TaskService {
     );
   }
 
-  updateTaskList
+  public updateIsCompletedStatus(
+    taskId: string,
+    isComplted: boolean
+  ): Observable<Task> {
+    return this._httpClient.patch<Task>(`${this._apiUrl}/tasks/${taskId}`, {
+      isComplted,
+    });
+  }
+
+  public updateTaskInTaskList(updateTask: Task): void {
+    this.tasks.update(tasks => {
+      const allTasksWithUpdatedTaskremoved = tasks.filter(
+        task => task.id !== updateTask.id
+      );
+      const updateTaskList = [...allTasksWithUpdatedTaskremoved, updateTask];
+      return this.getSortedTasks(updateTaskList);
+    });
+  }
+
+  public deleteTask(taskId: string): Observable<Task> {
+    return this._httpClient.delete<Task>(`${this._apiUrl}/tasks/${taskId}`);
+  }
+
+  public deleteATaskInTheTasksList(taskId: string): void {
+    this.tasks.update(task => task.filter(task => task.id !== taskId));
+  }
 
   public getSortedTasks(tasks: Task[]): Task[] {
     return tasks.sort((a, b) => a.title.localeCompare(b.title));
